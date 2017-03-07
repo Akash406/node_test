@@ -1,0 +1,14 @@
+{
+  "name": "node_test",
+  "version": "1.0.0",
+  "description": "Sample app on Heroku",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
