@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Sample app on Heroku",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "request": "^2.80.0"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js"
