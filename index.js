@@ -77,11 +77,66 @@ function receivedMessage(event){
       showOption(senderID)
 
        break;
+
+       case 'itenary':
+       showItenary(senderID)
+       break;
      default: sendTextMessage(senderID, messageText)
 
    }
 
  }
+}
+
+function showItenary(recipientId){
+  var messageData = {
+    recipient:{
+      id: recipientId
+
+    },message:{
+      attachment: {
+        type : "template",
+        payload : {
+        "template_type": "airline_itinerary",
+        "intro_message": "Here\'s your flight itinerary.",
+        "locale": "en_US",
+        "pnr_number": "ABCDEF",
+        "passenger_info": [
+         {
+           "name": "Farbound Smith Jr",
+           "ticket_number": "0741234567890",
+           "passenger_id": "p001"
+         },
+         {
+           "name": "Nick Jones",
+           "ticket_number": "0741234567891",
+           "passenger_id": "p002"
+         }
+       ],
+       "passenger_info": [
+         {
+           "name": "Farbound Smith Jr",
+           "ticket_number": "0741234567890",
+           "passenger_id": "p001"
+         },
+         {
+           "name": "Nick Jones",
+           "ticket_number": "0741234567891",
+           "passenger_id": "p002"
+         }
+       ],
+
+        }
+
+      }
+
+
+    }
+
+  };
+  callSendAPI(messageData)
+
+
 }
 
 function showOption(recipientId){
