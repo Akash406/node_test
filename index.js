@@ -57,16 +57,16 @@ app.post('/webhook/', function(req, res){
 
 function receivedMessage(event){
   var senderID = event.sender.id
-  var recipientid = event.recipient.id
+  var recipientId = event.recipient.id
   var timeoutMessage = event.timestamp
   var message = event.message
 
   console.log("Received message for user %d and page %d at %d with message:",
-   senderID, recipientID, timeOfMessage);
+   senderID, recipientId, timeOfMessage);
  console.log(JSON.stringify(message));
 
  var messageId = message.mid
- var messageText = event.message.text
+ var messageText =message.text
 
 
  if(messageText){
