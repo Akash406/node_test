@@ -66,7 +66,7 @@ function receivedMessage(event){
  console.log(JSON.stringify(message));
 
  var messageId = message.mid
- var messageText = message.text
+ var messageText = event.message.text
 
 
  if(messageText){
