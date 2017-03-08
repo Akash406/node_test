@@ -30,17 +30,26 @@ app.get('/webhook/', function(req, res){
 })
 
 app.post('/webhook/', function(req, res){
-  var msg_events = req.body.entry[0].messaging
-  for(let i = 0; i<msg_events.length; i++){
-    let event = msg_events[i]
-    let sender = event.sender.id
-    if(event.message){
-      receivedMessage(event)
-    }else{
-      console.log('received unknown event');
-    }
+  var data = req.body
 
-  }
+  if (data.object === 'page') {
+
+   // Iterate over each entry - there may be multiple if batched
+   data.entry.forEach(function(entry) {
+     var pageID = entry.id;
+     var timeOfEvent = entry.time;
+
+     // Iterate over each messaging event
+     entry.messaging.forEach(function(event) {
+       if (event.message) {
+         receivedMessage(event);
+       } else {
+         console.log("Webhook received unknown event: ", event);
+       }
+     });
+   });
+
+
   res.sendStatus(200)
 
 })
@@ -81,30 +90,27 @@ function sendTextMessage(recipientId, messageText){
 function callSendAPI(messageData){
   request({
     uri : 'https://graph.facebook.com/v2.6/me/messages',
-    qs : {access_token: EAAUpjZAlsybcBAIKbvCbOhMd5HDO8MKis10hMZCgrS2g1j8eZAJ7WgIxZCbPnPg2zKyNcEBmlHJS5z
+    qs : { access_token: EAAUpjZAlsybcBAIKbvCbOhMd5HDO8MKis10hMZCgrS2g1j8eZAJ7WgIxZCbPnPg2zKyNcEBmlHJS5z
 C1b6HnrpiBNRs8PwayUoVbx5dfzPe4I45UpPbfV4HX01aFOEDBUpa1jlgFnLBnTHbHigPHXtSMO5FL0dyBQVBOBY4RO4PbtR
 3c6Ejq},
 method : 'POST',
 json : messageData
   }, function(error, response, body){
     if (!error && response.statusCode == 200) {
-    var recipientId = body.recipient_id;
-    var messageId = body.message_id;
+    var recipientId = body.recipient_id
+    var messageId = body.message_id
 
     console.log("Successfully sent generic message with id %s to recipient %s",
-        messageId, recipientId);
+        messageId, recipientId)
       }else{
-        console.error("Unable to send message.");
-     console.error(response);
-     console.error(error);
+        console.error("Unable to send message.")
+     console.error(response)
+     console.error(error)
       }
 
   });
 
 }
-
-
-
 app.listen(app.get('port'), function() {
-    console.log('Our app is running on http://localhost:' + app.get('port'));
+    console.log('Our app is running on http://localhost:');
 });
