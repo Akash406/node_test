@@ -10,17 +10,16 @@ app.set('port', port);
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 
-app.set('view engine', 'ejs');
-
 app.get('/', function(req, res) {
 
     // ejs render automatically looks in the views folder
-    res.set('Hi I am chatbot ');
+    res.send('Hi I am chatbot ');
 });
 
+
+//Facebook
 app.get('/webhook/', function(req, res)){
-  if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === "test_messengerbot") {
+  if (req.query['hub.verify_token'] === "test_messengerbot") {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
