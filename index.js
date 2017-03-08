@@ -4,8 +4,7 @@ var request = require('request');
 
 var app = express();
 
-var port = process.env.PORT || 8080;
-app.set('port', port);
+app.set('port', (process.env.PORT || 8080));
 
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
@@ -30,6 +29,6 @@ app.get('/webhook/', function(req, res)){
 });
 
 
-app.listen(port, function() {
+app.listen(app.get('port'), function() {
     console.log('Our app is running on http://localhost:' + port);
 });
