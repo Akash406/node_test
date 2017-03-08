@@ -5,6 +5,8 @@ var request = require('request')
 
 var app = express()
 
+let token = 'EAAUpjZAlsybcBADZC0iuRvqgFhbXKmw1lEBmWZBjP46jZCbboZAwxg8KN9HY0PWOxgR8btNhrA7Rjc8YZCCvp4q3sGaIZCuqiZCHGerg18In6YnphrfW1kjhbF5nbZAkdUVKbPTcZAi1zxkT3SsuXMSg1JQUxNJi1MeqEPo7nNNUQcz64YiB21loFg'
+
 app.set('port', (process.env.PORT || 8080))
 
 app.use(bodyparser.urlencoded({extended:false}))
@@ -90,7 +92,7 @@ function sendTextMessage(recipientId, messageText){
 function callSendAPI(messageData){
   request({
     uri : 'https://graph.facebook.com/v2.6/me/messages',
-    qs : { access_token: EAAUpjZAlsybcBADZC0iuRvqgFhbXKmw1lEBmWZBjP46jZCbboZAwxg8KN9HY0PWOxgR8btNhrA7Rjc8YZCCvp4q3sGaIZCuqiZCHGerg18In6YnphrfW1kjhbF5nbZAkdUVKbPTcZAi1zxkT3SsuXMSg1JQUxNJi1MeqEPo7nNNUQcz64YiB21loFg},
+    qs : { access_token: token},
     method : 'POST',
     json : messageData
   }, function(error, response, body){
