@@ -78,7 +78,6 @@ function receivedMessage(event){
    switch (messageText) {
      case 'options':
       showOption(senderID)
-
        break;
 
        case 'itenary':
@@ -198,7 +197,7 @@ function sendTextMessage(recipientId, messageText){
 
 function callSendAPI(messageData){
   request({
-    uri : 'https://graph.facebook.com/v2.6/me/thread_settings', //https://graph.facebook.com/v2.6/me/messages
+    uri : 'https://graph.facebook.com/v2.6/me/messages', //https://graph.facebook.com/v2.6/me/messages
     qs : { access_token: token},
     method : 'POST',
     json : messageData
