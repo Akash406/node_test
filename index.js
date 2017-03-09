@@ -11,7 +11,6 @@ let token = 'EAAUpjZAlsybcBADZC0iuRvqgFhbXKmw1lEBmWZBjP46jZCbboZAwxg8KN9HY0PWOxg
 
 app.set('port', (process.env.PORT || 8080))
 
-socket = io.listen(process.env.PORT)
 
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
