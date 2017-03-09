@@ -97,35 +97,35 @@ function showItenary(recipientId){
       attachment: {
         type : "template",
         payload : {
-        "template_type": "airline_itinerary",
-        "intro_message": "Here\'s your flight itinerary.",
-        "locale": "en_US",
-        "pnr_number": "ABCDEF",
-        "passenger_info": [
+        template_type: "airline_itinerary",
+        intro_message: "Here\'s your flight itinerary.",
+        locale: "en_US",
+        pnr_number: "ABCDEF",
+        passenger_info: [
          {
-           "name": "Farbound Smith Jr",
-           "ticket_number": "0741234567890",
-           "passenger_id": "p001"
+           name: "Farbound Smith Jr",
+           ticket_number: "0741234567890",
+           passenger_id: "p001"
          },
          {
-           "name": "Nick Jones",
-           "ticket_number": "0741234567891",
-           "passenger_id": "p002"
+           name: "Nick Jones",
+           ticket_number: "0741234567891",
+           passenger_id: "p002"
          }
        ],
-       "passenger_info": [
+       passenger_info: [
          {
-           "name": "Farbound Smith Jr",
-           "ticket_number": "0741234567890",
-           "passenger_id": "p001"
+           name: "Farbound Smith Jr",
+           ticket_number: "0741234567890",
+           passenger_id: "p001"
          },
          {
-           "name": "Nick Jones",
-           "ticket_number": "0741234567891",
-           "passenger_id": "p002"
+           name: "Nick Jones",
+           ticket_number: "0741234567891",
+           passenger_id: "p002"
          }
        ],
-       "flight_info": [
+       flight_info: [
           {
             "connection_id": "c001",
             "segment_id": "s001",
@@ -137,13 +137,13 @@ function showItenary(recipientId){
               "terminal": "T4",
               "gate": "G8"
             },
-            "arrival_airport": {
+            arrival_airport: {
               "airport_code": "SLC",
               "city": "Salt Lake City",
               "terminal": "T4",
               "gate": "G8"
             },
-            "flight_schedule": {
+            flight_schedule: {
               "departure_time": "2016-01-02T19:45",
               "arrival_time": "2016-01-02T21:20"
             },
@@ -161,19 +161,19 @@ function showItenary(recipientId){
               "terminal": "T1",
               "gate": "G33"
             },
-            "arrival_airport": {
+            arrival_airport: {
              "airport_code": "AMS",
              "city": "Amsterdam",
              "terminal": "T1",
              "gate": "G33"
            },
-           "flight_schedule": {
+           flight_schedule: {
              "departure_time": "2016-01-02T22:45",
              "arrival_time": "2016-01-03T17:20"
            }
          }
        ],
-       "passenger_segment_info": [
+       passenger_segment_info: [
          {
            "segment_id": "s001",
            "passenger_id": "p001",
@@ -191,7 +191,7 @@ function showItenary(recipientId){
            "passenger_id": "p001",
            "seat": "73A",
            "seat_type": "World Business",
-           "product_info": [
+           product_info: [
              {
                "title": "Lounge",
                "value": "Complimentary lounge access"
@@ -207,7 +207,7 @@ function showItenary(recipientId){
            "passenger_id": "p002",
            "seat": "73B",
            "seat_type": "World Business",
-           "product_info": [
+           product_info: [
              {
                "title": "Lounge",
                "value": "Complimentary lounge access"
@@ -219,7 +219,7 @@ function showItenary(recipientId){
            ]
          }
        ],
-       "price_info": [
+       price_info: [
          {
            "title": "Fuel surcharge",
            "amount": "1597",
