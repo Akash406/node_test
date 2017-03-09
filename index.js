@@ -103,7 +103,7 @@ function showItenary(recipientId){
     attachment: {
       type: "template",
       payload: {
-        template_type: "generic",
+        template_type: "airline_update",
         intro_message: "Your flight is delayed",
         update_type: "delay",
         locale: "en_US",
