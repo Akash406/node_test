@@ -3,11 +3,15 @@ var express = require('express')
 var bodyparser = require('body-parser')
 var request = require('request')
 
+
+
 var app = express()
 
 let token = 'EAAUpjZAlsybcBADZC0iuRvqgFhbXKmw1lEBmWZBjP46jZCbboZAwxg8KN9HY0PWOxgR8btNhrA7Rjc8YZCCvp4q3sGaIZCuqiZCHGerg18In6YnphrfW1kjhbF5nbZAkdUVKbPTcZAi1zxkT3SsuXMSg1JQUxNJi1MeqEPo7nNNUQcz64YiB21loFg'
 
 app.set('port', (process.env.PORT || 8080))
+
+socket = io.listen(process.env.PORT)
 
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
