@@ -86,6 +86,9 @@ function receivedMessage(event){
        break;
      default: sendTextMessage(senderID, messageText)
 
+   }else if(event.postback){
+
+
    }
 
  }
@@ -100,7 +103,7 @@ function showItenary(recipientId){
     attachment: {
       type: "template",
       payload: {
-        template_type: "airline_update",
+        template_type: "generic",
         intro_message: "Your flight is delayed",
         update_type: "delay",
         locale: "en_US",
