@@ -86,9 +86,6 @@ function receivedMessage(event){
        break;
      default: sendTextMessage(senderID, messageText)
 
-   }else if(event.postback){
-
-
    }
 
  }
