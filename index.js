@@ -75,7 +75,7 @@ function receivedMessage(event){
 
  if(messageText){
    switch (messageText) {
-     case 'greeting':
+     case 'hello':
      showGreeting()
      break;
      case 'options':
@@ -102,7 +102,7 @@ function showGreeting(){
       },
       {
         locale: "en_US",
-        text:"Timeless apparel for the masses."
+        text:"Timeless apparel for the masses"
       }
     ]
 
