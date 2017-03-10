@@ -109,7 +109,7 @@ function showGreeting(){
 
   };
 
-  callGreetingApi(messageData)
+  callGreetingApi(greetingData)
 
 }
 
