@@ -92,7 +92,7 @@ function receivedMessage(event){
  }
 }
 
-fuction showGreeting(){
+function showGreeting(){
   var greetingData = {
     setting_type: "greeting",
     greeting : [
