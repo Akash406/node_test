@@ -38,9 +38,6 @@ app.post('/webhook/', function(req, res){
   var data = req.body
 
   if (data.object === 'page') {
-
-    showGreeting();
-
    // Iterate over each entry - there may be multiple if batched
    data.entry.forEach(function(entry) {
      var pageID = entry.id;
@@ -78,10 +75,12 @@ function receivedMessage(event){
 
  if(messageText){
    switch (messageText) {
+     case 'greeting':
+     showGreeting()
+     break;
      case 'options':
       showOption(senderID)
        break;
-
        case 'itenary':
        showItenary(senderID)
        break;
