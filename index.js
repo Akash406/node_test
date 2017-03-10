@@ -94,17 +94,11 @@ function receivedMessage(event){
 function showGreeting(){
   var greetingData = {
     setting_type: "greeting",
-    greeting : [
-      {
+    greeting : {
         locale: "default",
         text:"Hello!"
 
-      },
-      {
-        locale: "en_US",
-        text:"Timeless apparel for the masses"
       }
-    ]
 
   };
 
