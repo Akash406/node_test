@@ -95,7 +95,7 @@ function showGreeting(){
   var greetingData = {
     setting_type: "greeting",
     greeting : {
-        text:"Hello!"
+        text:"Welcome to BOT Test page!"
 
       }
 
@@ -244,7 +244,7 @@ function callGreetingApi(greetingData){
       var recipientId = body.recipient_id
       var messageId = body.message_id
 
-      console.log("Successfully greeting displayed", messageId, recipientId);
+      console.log("Successfully greeting displayed", greetingData);
 
     }else{
       console.error("unable to display greeting");
