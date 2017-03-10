@@ -90,6 +90,29 @@ function receivedMessage(event){
  }
 }
 
+fuction showDisplay(){
+  var greetingData = {
+    setting_type: "greeting",
+    greeting : [
+      {
+        locale: "default",
+        text:"Hello!"
+
+      },
+      {
+        locale: "en_US",
+        text:"Timeless apparel for the masses."
+      }
+
+    ]
+
+
+  };
+
+  callGreetingApi(messageData)
+
+}
+
 function showItenary(recipientId){
   var messageData = {
     recipient:{
@@ -213,6 +236,29 @@ function callSendAPI(messageData){
      console.error(response)
      console.error(error)
       }
+
+  });
+
+}
+
+function callGreetingApi(greetingData){
+  request({
+    uri : 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token, token},
+    method : 'POST',
+    json : greetingData
+  },function(error, response, body){
+    if(!error && response.statusCode == 200){
+      var recipientId = body.recipient_id
+      var messageId = body.message_id
+
+      console.log("Successfully greeting displayed", messageId, recipientId);
+
+    }else{
+      console.error("unable to display greeting");
+      console.error(response);
+      console.error(error);
+    }
 
   });
 
