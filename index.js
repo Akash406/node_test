@@ -95,7 +95,6 @@ function showGreeting(){
   var greetingData = {
     setting_type: "greeting",
     greeting : {
-        locale: "default",
         text:"Hello!"
 
       }
