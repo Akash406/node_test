@@ -39,6 +39,8 @@ app.post('/webhook/', function(req, res){
 
   if (data.object === 'page') {
 
+    showGreeting();
+
    // Iterate over each entry - there may be multiple if batched
    data.entry.forEach(function(entry) {
      var pageID = entry.id;
@@ -90,7 +92,7 @@ function receivedMessage(event){
  }
 }
 
-fuction showDisplay(){
+fuction showGreeting(){
   var greetingData = {
     setting_type: "greeting",
     greeting : [
@@ -103,9 +105,7 @@ fuction showDisplay(){
         locale: "en_US",
         text:"Timeless apparel for the masses."
       }
-
     ]
-
 
   };
 
