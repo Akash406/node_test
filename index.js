@@ -243,7 +243,7 @@ function callSendAPI(messageData){
 function callGreetingApi(greetingData){
   request({
     uri : 'https://graph.facebook.com/v2.6/me/thread_settings',
-    qs: { access_token, token},
+    qs: { access_token: token},
     method : 'POST',
     json : greetingData
   },function(error, response, body){
